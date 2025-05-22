@@ -32,7 +32,7 @@
     "@shopify/app-bridge": "^3.7.10",
     "@shopify/app-bridge-react": "^4.1.10",
     "@shopify/polaris": "^13.9.5",
-    "@shopify/shopify-app-remix": "^3.7.0",
+    "@shopify/shopify-app-remix": "git+https://github.com/smartailife-public/shopify-app-remix-fixed.git",
     "@shopify/shopify-app-session-storage-prisma": "^6.0.0",
     "isbot": "^5.1.0",
     "prisma": "^6.2.1",
