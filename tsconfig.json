@@ -11,6 +11,7 @@
     "noEmit": true,
     "allowJs": true,
     "resolveJsonModule": true,
+    "esModuleInterop": true,
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
