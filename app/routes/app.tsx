@@ -4,9 +4,10 @@ import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
 //import { AppProvider } from '@shopify/shopify-app-remix/react';
 import { AppProvider } from '../components/Shopify/AppProvider'; // 상대 경로 주의
 import { NavMenu } from "@shopify/app-bridge-react";
-import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
-
 import { authenticate } from "../shopify.server";
+
+const polarisStyles = require.resolve("@shopify/polaris/build/esm/styles.css");
+
 
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 

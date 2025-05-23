@@ -15,7 +15,7 @@ import {
 const polarisTranslations = require("@shopify/polaris/locales/en.json");
 
 // Polaris CSS (Node.js와 호환되도록 ?url 사용)
-import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
+const polarisStyles = require.resolve("@shopify/polaris/build/esm/styles.css");
 
 // Remix <Links>에 CSS 포함
 export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
