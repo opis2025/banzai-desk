@@ -12,7 +12,8 @@ import {
 } from "@shopify/polaris";
 //import polarisTranslations from "@shopify/polaris/locales/en.json";
 const polarisTranslations = require("@shopify/polaris/locales/en.json");
-import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
+//import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
+import polarisStyles from "@shopify/polaris/build/esm/styles.css";
 
 import { login } from "../../shopify.server";
 
