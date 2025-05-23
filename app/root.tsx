@@ -1,5 +1,6 @@
 import {LoaderFunctionArgs} from '@remix-run/node';
-import { AppProvider } from '@shopify/shopify-app-remix/react';
+//import { AppProvider } from '@shopify/shopify-app-remix/react';
+import { AppProvider } from './components/Shopify/AppProvider'; // 상대 경로 주의
 
 
 import shopify from './shopify.server';
