@@ -7,8 +7,8 @@ import {
 // @ts-ignore
 import englishI18n from '@shopify/polaris/locales/en.json';
 
-import {APP_BRIDGE_URL} from '../../const';
-import {RemixPolarisLink} from '../RemixPolarisLink';
+import { APP_BRIDGE_URL } from '../../lib/const';
+import { RemixPolarisLink } from './RemixPolarisLink';
 
 export interface AppProviderProps
   extends Omit<PolarisAppProviderProps, 'linkComponent' | 'i18n'> {
