@@ -6,12 +6,6 @@ import { AppProvider } from '../components/Shopify/AppProvider'; // 상대 경�
 import { NavMenu } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
 
-import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
-
-export function links() {
-  return [{ rel: "stylesheet", href: polarisStyles }];
-}
-
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   await authenticate.admin(request);
 

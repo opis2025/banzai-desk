@@ -14,12 +14,6 @@ import {
 // Polaris i18n JSON (Node.js 호환 방식)
 const polarisTranslations = require("@shopify/polaris/locales/en.json");
 
-import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
-
-export function links() {
-  return [{ rel: "stylesheet", href: polarisStyles }];
-}
-
 import { login } from "../../shopify.server";
 import { loginErrorMessage } from "./error.server";
 

@@ -7,11 +7,15 @@ import shopify from './shopify.server';
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
+//import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 
-export function links() {
-  return [{ rel: "stylesheet", href: polarisStyles }];
-}
+export const links = () => [
+  {
+    rel: "stylesheet",
+    href: "https://unpkg.com/@shopify/polaris@12.7.0/build/esm/styles.css"
+  }
+];
+
 
 import {
   Links,
