@@ -2,6 +2,7 @@ import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { installGlobals } from "@remix-run/node";
+import json from '@rollup/plugin-json'; // ✅ 추가
 
 installGlobals({ nativeFetch: true });
 
@@ -55,6 +56,7 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
+    json(),
   ],
   assetsInclude: ["**/*.css", "**/*.json"], // ✅ Polaris CSS 파일을 자산으로 처리
   optimizeDeps: {
