@@ -1,13 +1,10 @@
 import { vitePlugin as remix } from "@remix-run/dev";
-import { installGlobals } from "@remix-run/node";
 import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
-import json from "@rollup/plugin-json";
+import { installGlobals } from "@remix-run/node";
 
-// 글로벌 fetch 설정
 installGlobals({ nativeFetch: true });
 
-// Shopify APP_URL 호스트 재설정 (Render 환경 대응)
 if (
   process.env.HOST &&
   (!process.env.SHOPIFY_APP_URL || process.env.SHOPIFY_APP_URL === process.env.HOST)
@@ -18,27 +15,27 @@ if (
 
 const host = new URL(process.env.SHOPIFY_APP_URL || "http://localhost").hostname;
 
-let hmrConfig;
-if (host === "localhost") {
-  hmrConfig = {
-    protocol: "ws",
-    host: "localhost",
-    port: 64999,
-    clientPort: 64999,
-  };
-} else {
-  hmrConfig = {
-    protocol: "wss",
-    host: host,
-    port: parseInt(process.env.FRONTEND_PORT || "8002"),
-    clientPort: 443,
-  };
-}
+const hmrConfig =
+  host === "localhost"
+    ? {
+        protocol: "ws",
+        host: "localhost",
+        port: 64999,
+        clientPort: 64999,
+      }
+    : {
+        protocol: "wss",
+        host,
+        port: parseInt(process.env.FRONTEND_PORT || "8002"),
+        clientPort: 443,
+      };
 
 export default defineConfig({
   server: {
     allowedHosts: [host],
-    cors: { preflightContinue: true },
+    cors: {
+      preflightContinue: true,
+    },
     port: Number(process.env.PORT || 3000),
     hmr: hmrConfig,
     fs: {
@@ -58,12 +55,11 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-    json(),
   ],
+  assetsInclude: ["**/*.json"],
   build: {
     assetsInlineLimit: 0,
   },
-  assetsInclude: ["**/*.json", "**/*.css"],
   optimizeDeps: {
     include: ["@shopify/app-bridge-react", "@shopify/polaris"],
   },
