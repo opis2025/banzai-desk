@@ -56,8 +56,8 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-  ],
-  assetsInclude: ["**/*.json"],
+  ],  
+  assetsInclude: ["**/*.css", "**/*.json"],
   json: {
     namedExports: true, // ✅ Polaris JSON 파일 require 방식 호환성 확보
   },

@@ -10,29 +10,27 @@ import {
   Text,
   TextField,
 } from "@shopify/polaris";
-//import polarisTranslations from "@shopify/polaris/locales/en.json";
+
+// Polaris i18n JSON (Node.js 호환 방식)
 const polarisTranslations = require("@shopify/polaris/locales/en.json");
-//import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
-import polarisStyles from "@shopify/polaris/build/esm/styles.css";
+
+// Polaris CSS (Node.js와 호환되도록 ?url 사용)
+import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
+
+// Remix <Links>에 CSS 포함
+export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 import { login } from "../../shopify.server";
-
 import { loginErrorMessage } from "./error.server";
-
-export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const errors = loginErrorMessage(await login(request));
-
   return { errors, polarisTranslations };
 };
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const errors = loginErrorMessage(await login(request));
-
-  return {
-    errors,
-  };
+  return { errors };
 };
 
 export default function Auth() {
