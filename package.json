@@ -1,5 +1,5 @@
 {
-  "name": "banzai-apps",
+  "name": "banzai-desk",
   "private": true,
   "scripts": {
     "build": "remix build",
@@ -20,7 +20,7 @@
   },
   "type": "module",
   "engines": {
-    "node": "^18.20 || ^20.10 || >=21.0.0"
+  "node": ">=20.0.0"
   },
   "dependencies": {
     "@prisma/client": "^6.2.1",
@@ -32,7 +32,7 @@
     "@shopify/app-bridge": "^3.7.10",
     "@shopify/app-bridge-react": "^4.1.10",
     "@shopify/polaris": "^13.9.5",
-    "@shopify/shopify-app-remix": "git+https://github.com/smartailife-public/shopify-app-remix-fixed.git",
+    "@shopify/shopify-app-remix":  "^2.6.1",
     "@shopify/shopify-app-session-storage-prisma": "^6.0.0",
     "isbot": "^5.1.0",
     "prisma": "^6.2.1",
