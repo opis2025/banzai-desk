@@ -1,5 +1,5 @@
 import { AppProvider as PolarisProvider } from "@shopify/polaris";
-import en from "@shopify/polaris/locales/en.json" with { type: "json" };
+import en from "@shopify/polaris/locales/en.json"; // 👈 "with { type: 'json' }" 제거
 import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
 
