@@ -1,4 +1,5 @@
 import { vitePlugin as remix } from "@remix-run/dev";
+import { remix } from "remix-plugin"; // 예: 기존에 있던 remix 관련 설정이 있다면 유지
 import { installGlobals } from "@remix-run/node";
 import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
@@ -61,6 +62,10 @@ export default defineConfig({
         v3_singleFetch: false,
         v3_routeConfig: true,
       },
+    json: {
+      namedExports: true,
+    },
+    assetsInclude: ["**/*.json"],
     }),
     tsconfigPaths(),
   ],
