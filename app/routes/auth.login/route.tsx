@@ -14,11 +14,11 @@ import {
 // Polaris i18n JSON (Node.js 호환 방식)
 const polarisTranslations = require("@shopify/polaris/locales/en.json");
 
-// Polaris CSS (Node.js와 호환되도록 ?url 사용)
-const polarisStyles = require.resolve("@shopify/polaris/build/esm/styles.css");
+import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 
-// Remix <Links>에 CSS 포함
-export const links = () => [{ rel: "stylesheet", href: polarisStyles }];
+export function links() {
+  return [{ rel: "stylesheet", href: polarisStyles }];
+}
 
 import { login } from "../../shopify.server";
 import { loginErrorMessage } from "./error.server";

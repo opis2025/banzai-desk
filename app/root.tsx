@@ -7,7 +7,7 @@ import shopify from './shopify.server';
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
-const polarisStyles = require.resolve("@shopify/polaris/build/esm/styles.css");
+import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
 
 export function links() {
   return [{ rel: "stylesheet", href: polarisStyles }];
