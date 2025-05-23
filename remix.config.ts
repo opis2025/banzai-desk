@@ -9,5 +9,8 @@ export default {
   serverDependenciesToBundle: [
     "@shopify/shopify-app-remix",
     "@shopify/polaris",
+  watchPaths: {
+  ignore: ["**/*.css"],
+  },
   ],
 } satisfies AppConfig;
