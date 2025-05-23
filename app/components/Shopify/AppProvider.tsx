@@ -5,7 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 
 
 // Polaris i18n JSON을 require 방식으로 불러오기
-const en = require("@shopify/polaris/locales/en.json");
+//const en = require("@shopify/polaris/locales/en.json");
+const messages = await import("@shopify/polaris/locales/en.json", {
+  with: { type: "json" }
+});
 
 interface Props {
   children: ReactNode;
@@ -13,7 +16,7 @@ interface Props {
 
 export function AppProvider({ children }: Props) {
   return (
-    <PolarisAppProvider i18n={en}>
+    <PolarisAppProvider i18n={messages}>
       <BrowserRouter>{children}</BrowserRouter>
     </PolarisAppProvider>
   );
