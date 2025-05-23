@@ -1,7 +1,7 @@
 import { AppProvider as PolarisAppProvider } from "@shopify/polaris";
 import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
-import "@shopify/polaris/build/esm/styles.css";
+//import "@shopify/polaris/build/esm/styles.css";
 
 
 // Polaris i18n JSON을 require 방식으로 불러오기
