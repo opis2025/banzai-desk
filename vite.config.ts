@@ -74,6 +74,7 @@ export default defineConfig({
     assetsInclude: ["**/*.json"],
     }),
     tsconfigPaths(),
+    json(), // ✅ 이 줄만 추가하세요!
   ],
   build: {
     assetsInlineLimit: 0,
