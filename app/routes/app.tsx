@@ -5,10 +5,6 @@ import { Link, Outlet, useLoaderData, useRouteError } from "@remix-run/react";
 import { AppProvider } from '../components/Shopify/AppProvider'; // 상대 경로 주의
 import { NavMenu } from "@shopify/app-bridge-react";
 import polarisStyles from "@shopify/polaris/build/esm/styles.css?url";
-import { Icon } from '@shopify/polaris';
-import {
-  ProductListIcon
-} from '@shopify/polaris-icons';
 
 import { authenticate } from "../shopify.server";
 
@@ -29,8 +25,7 @@ export default function App() {
         <Link to="/app" rel="home">
           Home
         </Link>        
-        <Link to="/app/products" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-        <Icon source={ProductListIcon} tone="base"/>Custom Products Page</Link>
+        <Link to="/app/products">Custom Products Page</Link>
         <Link to="/app/inventory">Custom Inventory Page</Link>
         <Link to="/app/draftitems">Draft Products Page</Link>
       </NavMenu>
