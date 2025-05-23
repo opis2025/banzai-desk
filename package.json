@@ -29,7 +29,7 @@
     "@shopify/app-bridge": "^3.7.10",
     "@shopify/app-bridge-react": "^4.1.10",
     "@shopify/polaris": "^13.9.5",
-    "@shopify/shopify-app-remix": "git+https://github.com/opis2025/shopify-app-js.git#main:packages/apps/shopify-app-remix",
+    "@shopify/shopify-app-remix": "^3.8.2",
     "@shopify/shopify-app-session-storage-prisma": "^6.0.0",
     "isbot": "^5.1.0",
     "prisma": "^6.2.1",

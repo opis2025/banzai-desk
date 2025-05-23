@@ -1,1 +1,0 @@
-export const APP_BRIDGE_URL = "/apps";
