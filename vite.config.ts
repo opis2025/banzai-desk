@@ -3,7 +3,6 @@ import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { installGlobals } from "@remix-run/node";
 
-
 installGlobals({ nativeFetch: true });
 
 if (
@@ -56,16 +55,13 @@ export default defineConfig({
       },
     }),
     tsconfigPaths(),
-  ],  
-  assetsInclude: ["**/*.css", "**/*.json"],
-  json: {
-    namedExports: true, // ✅ Polaris JSON 파일 require 방식 호환성 확보
-  },
-  build: {
-    assetsInlineLimit: 0,
-  },
+  ],
+  assetsInclude: ["**/*.css", "**/*.json"], // ✅ Polaris CSS 파일을 자산으로 처리
   optimizeDeps: {
-  include: ['@shopify/app-bridge-react','@shopify/polaris'],
-  exclude: ['@shopify/polaris/build/esm/styles.css']
+    include: ["@shopify/polaris"],
+    exclude: ["@shopify/polaris/build/esm/styles.css"], // ✅ Node.js에서 직접 처리 못하게 방지
+  },
+  json: {
+    namedExports: true,
   },
 }) satisfies UserConfig;
