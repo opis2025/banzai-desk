@@ -8,7 +8,7 @@ interface Props {
 }
 
 export function AppProvider({ children }: Props) {
-  const [i18n, setI18n] = useState(null);
+  const [i18n, setI18n] = useState<any>(null);
 
   useEffect(() => {
     (async () => {
@@ -17,7 +17,7 @@ export function AppProvider({ children }: Props) {
     })();
   }, []);
 
-  if (!i18n) return null; // 혹은 로딩 스피너 등 표시 가능
+  if (!i18n) return null; // or a <Loading /> spinner
 
   return (
     <PolarisAppProvider i18n={i18n}>
