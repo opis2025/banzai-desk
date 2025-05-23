@@ -3,6 +3,7 @@ import { defineConfig, type UserConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { installGlobals } from "@remix-run/node";
 
+
 installGlobals({ nativeFetch: true });
 
 if (
@@ -57,6 +58,9 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   assetsInclude: ["**/*.json"],
+  json: {
+    namedExports: true, // ✅ Polaris JSON 파일 require 방식 호환성 확보
+  },
   build: {
     assetsInlineLimit: 0,
   },

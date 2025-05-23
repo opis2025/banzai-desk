@@ -3,14 +3,17 @@ import { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
 import "@shopify/polaris/build/esm/styles.css";
 
-// Polaris에서 자동으로 en.json을 처리하게 두는 방식
+
+// Polaris i18n JSON을 require 방식으로 불러오기
+const en = require("@shopify/polaris/locales/en.json");
+
 interface Props {
   children: ReactNode;
 }
 
 export function AppProvider({ children }: Props) {
   return (
-    <PolarisAppProvider i18n={{}}>
+    <PolarisAppProvider i18n={en}>
       <BrowserRouter>{children}</BrowserRouter>
     </PolarisAppProvider>
   );
